@@ -31,21 +31,22 @@ public class MainMenuController extends Controller implements Initializable {
         confirmationAlert.setHeaderText(null);
         confirmationAlert.setContentText("Are you sure you want to perform this operation?");
 
-        /////////////////////////////////////////////
-        GmailService gmail = new GmailService();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        try {
-            Date begDate = dateFormat.parse("2020-09-01");
-            Date endDate = Calendar.getInstance().getTime();
-            squareEmailObservableList = FXCollections.observableList(gmail.getEmails(begDate, endDate, 100));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+//        /////////////////////////////////////////////
+//        GmailService gmail = new GmailService();
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//        try {
+//            Date begDate = dateFormat.parse("2020-09-01");
+//            Date endDate = Calendar.getInstance().getTime();
+//            squareEmailObservableList = FXCollections.observableList(gmail.getEmails(begDate, endDate, 100));
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
         /////////////////////////////////////////////
     }
 
     public void userPushed(ActionEvent event) throws IOException {
         loadScene(event, "/views/UserAccount.fxml", ControllerType.USER);
+        
     }
 
     public void logOutPushed(ActionEvent event) throws IOException {
